@@ -11,13 +11,30 @@
 </head>
 
 <body>
-    <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#home" class="logo">Ritik<span>Raj</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
     <header id="home">
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
         <div class="container">
             <div class="header-content">
                 <h1 class="title">Ritik Raj</h1>
@@ -26,7 +43,8 @@
                     <a href="https://github.com/codewith-raj" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/codewith-raj" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/codewith-raj" target="_blank" class="social-link"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="https://x.com/RitikRaj257376" class="social-link" aria-label="Twitter">
@@ -36,11 +54,16 @@
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
-                <a href="#about" class="btn" style="margin-top: 30px;">Explore My Work</a>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn" style="margin-top: 30px;">View My Work</a>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 30px; margin-left: 15px;">Contact
+                        Me</a>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -70,13 +93,14 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="image/WhatsApp Image 2025-04-12 at 02.04.45_6a65deb8.jpg"
-                        alt="Ritik Raj" class="profile-image" style="width: 150%; height: auto;">
+                    <img src="image/WhatsApp Image 2025-04-12 at 02.04.45_6a65deb8.jpg" alt="Ritik Raj"
+                        class="profile-image" style="width: 150%; height: auto;">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -109,8 +133,7 @@
 
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="image/1738259349464.jpg"
-                            alt="MUJ-Marketplace" class="project-image">
+                        <img src="image/1738259349464.jpg" alt="MUJ-Marketplace" class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
@@ -132,8 +155,7 @@
 
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="image/Untitled design (1).png"
-                            alt="Spiko" class="project-image">
+                        <img src="image/Untitled design (1).png" alt="Spiko" class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
@@ -155,8 +177,7 @@
 
                 <div class="project-card">
                     <div class="project-image-container">
-                        <img src="image/Untitled design.png"
-                            alt="Vartul" class="project-image">
+                        <img src="image/Untitled design.png" alt="Vartul" class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-title">
@@ -179,6 +200,7 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -227,6 +249,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -234,80 +257,73 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <a href="mailto:ritikrajunique111@gmail.com" class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div>
+                        <div class="contact-item-content">
                             <h4>Email</h4>
-                            <a href="mailto:your.email@example.com">ritikrajunique111@gmail.com</a>
+                            <p>ritikrajunique111@gmail.com</p>
                         </div>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <a href="https://github.com/codewith-raj" target="_blank" class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-github"></i>
                         </div>
-                        <div>
+                        <div class="contact-item-content">
                             <h4>GitHub</h4>
-                            <a href="https://github.com/codewith-raj" target="_blank">github.com/codewith-raj</a>
+                            <p>github.com/codewith-raj</p>
                         </div>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <a href="https://www.linkedin.com/in/codewith-raj" target="_blank" class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-linkedin"></i>
                         </div>
-                        <div>
+                        <div class="contact-item-content">
                             <h4>LinkedIn</h4>
-                            <a href="#" target="_blank">https://www.linkedin.com/in/ritik-raj-521765289/</a>
+                            <p>linkedin.com/in/codewith-raj</p>
                         </div>
-                    </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-file-download"></i>
-                            </div>
-                            <div>
-                                <h4>Resume</h4>
-                                <a href="https://drive.google.com/file/d/1c5YNlxhjybXSCiL0qg1cMhpGxSR2fXv3/view?usp=sharing" download="Ritik_Raj_Resume.pdf">Download My Resume</a>
-                            </div>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1c5YNlxhjybXSCiL0qg1cMhpGxSR2fXv3/view?usp=sharing"
+                        download="Ritik_Raj_Resume.pdf" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-download"></i>
                         </div>
+                        <div class="contact-item-content">
+                            <h4>Resume</h4>
+                            <p>Download My Resume</p>
+                        </div>
+                    </a>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div>
+                        <div class="contact-item-content">
                             <h4>Location</h4>
                             <p>Manipal University Jaipur - Jaipur, India</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <div class="contact-btn-container">
+                    <a href="mailto:ritikrajunique111@gmail.com" class="btn">Email Me</a>
+                    <a href="https://wa.me/yourphonenumber" class="btn btn-outline">WhatsApp</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <img src="image/Ritik raj.png"
-                alt="Coding workspace" class="footer-image">
+            <img src="image/Ritik raj.png" alt="Coding workspace" class="footer-image">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Ritik Raj. All rights reserved.</p>
+                
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
