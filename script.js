@@ -1,4 +1,3 @@
-// Scroll animations
 const animateElements = document.querySelectorAll('[data-animate]');
 
 const animateOnScroll = () => {
@@ -12,13 +11,10 @@ const animateOnScroll = () => {
     });
 };
 
-// Run once on load
+
 animateOnScroll();
 
-// Run on scroll
 window.addEventListener('scroll', animateOnScroll);
-
-// Back to top button
 const backToTopButton = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
@@ -29,7 +25,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Typewriter effect for subtitle
+
 const subtitles = [
     "Web Developer • Blockchain Enthusiast • Problem Solver",
     "Tech Innovator • Open Source Contributor • Student",
@@ -55,12 +51,12 @@ function startTextAnimation() {
     });
 }
 
-// Start the animation
+
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(startTextAnimation, 1000);
 });
 
-// Smooth scrolling for anchor links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -71,7 +67,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add pulse animation to buttons on hover
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('mouseenter', () => {
