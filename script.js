@@ -1,4 +1,3 @@
-// Mobile menu toggle
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -8,8 +7,6 @@ function setupMobileMenu() {
         hamburger.innerHTML = navLinks.classList.contains('active') ?
             '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
-
-    // Close menu when a link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -18,7 +15,6 @@ function setupMobileMenu() {
     });
 }
 
-// Scroll animations
 function setupScrollAnimations() {
     const animateElements = document.querySelectorAll('[data-animate]');
 
@@ -33,14 +29,12 @@ function setupScrollAnimations() {
         });
     };
 
-    // Run once on load
+   
     animateOnScroll();
 
-    // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
 }
 
-// Back to top button
 function setupBackToTop() {
     const backToTopButton = document.getElementById('backToTop');
 
@@ -53,7 +47,6 @@ function setupBackToTop() {
     });
 }
 
-// Navbar scroll effect
 function setupNavbarScroll() {
     const navbar = document.querySelector('.navbar');
 
@@ -66,7 +59,6 @@ function setupNavbarScroll() {
     });
 }
 
-// Typing animation
 function setupTypingAnimation() {
     const subtitles = [
         "Web Developer • Blockchain Enthusiast • Problem Solver",
@@ -93,11 +85,8 @@ function setupTypingAnimation() {
         });
     }
 
-    // Start animation after 1 second
     setTimeout(startTextAnimation, 1000);
 }
-
-// Smooth scrolling for anchor links
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -110,12 +99,11 @@ function setupSmoothScrolling() {
     });
 }
 
-// Set current year in footer
 function setCurrentYear() {
     document.getElementById('year').textContent = new Date().getFullYear();
 }
 
-// Button hover animations
+
 function setupButtonAnimations() {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
@@ -128,7 +116,6 @@ function setupButtonAnimations() {
     });
 }
 
-// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     setupMobileMenu();
     setupScrollAnimations();
