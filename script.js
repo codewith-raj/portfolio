@@ -5,42 +5,66 @@ window.addEventListener('load', function () {
     }, 1000);
 });
 
-// Mobile Menu Toggle
+// Enhanced Mobile Menu with better accessibility and outside click handling
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    const navItems = document.querySelectorAll('.nav-link');
 
-    hamburger.addEventListener('click', () => {
+    function toggleMenu() {
         navLinks.classList.toggle('active');
-        hamburger.innerHTML = navLinks.classList.contains('active') ?
-            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        hamburger.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        
+        // Toggle body scroll
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
     });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-        });
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar-container') && navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 }
 
-// Scroll Animations
+// Enhanced Scroll Animations with throttling
 function setupScrollAnimations() {
     const animateElements = document.querySelectorAll('[data-animate]');
+    const windowHeight = window.innerHeight;
+    const triggerOffset = windowHeight / 5;
 
-    const animateOnScroll = () => {
+    function checkPosition() {
         animateElements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (elementPosition < windowHeight - 100) {
+            const elementTop = element.getBoundingClientRect().top;
+            
+            if (elementTop < windowHeight - triggerOffset) {
                 element.classList.add('animate');
             }
         });
-    };
+    }
 
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
+    // Initial check
+    checkPosition();
+    
+    // Throttled scroll event
+    let isScrolling;
+    window.addEventListener('scroll', () => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(checkPosition, 50);
+    }, { passive: true });
 }
 
 // Back to Top Button
@@ -328,17 +352,21 @@ function setupParticles() {
     });
 }
 
-// Initialize all functions
+// Initialize all functions with error handling
 document.addEventListener('DOMContentLoaded', () => {
-    setupMobileMenu();
-    setupScrollAnimations();
-    setupBackToTop();
-    setupNavbarScroll();
-    setupTypingAnimation();
-    setupSmoothScrolling();
-    setupCertificationsSlider();
-    setupButtonAnimations();
-    setupThemeToggle();
-    setupCounterAnimation();
-    setupParticles();
+    try {
+        setupMobileMenu();
+        setupScrollAnimations();
+        setupBackToTop();
+        setupNavbarScroll();
+        setupTypingAnimation();
+        setupSmoothScrolling();
+        setupCertificationsSlider();
+        setupButtonAnimations();
+        setupThemeToggle();
+        setupCounterAnimation();
+        setupParticles();
+    } catch (error) {
+        console.error('Initialization error:', error);
+    }
 });

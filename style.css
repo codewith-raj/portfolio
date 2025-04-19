@@ -20,6 +20,10 @@
     --border-radius: 8px;
     --border-radius-lg: 12px;
     --border-radius-xl: 16px;
+    --header-padding: 100px;
+    --section-padding: 100px;
+    --mobile-header-padding: 60px;
+    --mobile-section-padding: 60px;
 }
 
 @keyframes fadeIn {
@@ -105,6 +109,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -118,9 +123,17 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+}
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
 h4 {
     font-weight: 700;
     line-height: 1.2;
@@ -160,6 +173,7 @@ p {
     color: var(--gray);
     font-size: 1.1rem;
     line-height: 1.7;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 a {
@@ -221,13 +235,14 @@ header {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0;
+    padding: var(--header-padding) 0;
     position: relative;
     overflow: hidden;
 }
 
 .header-content {
     max-width: 800px;
+    padding: 0 15px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -913,9 +928,12 @@ footer {
 /* Experience */
 .timeline {
     position: relative;
-    max-width: 800px;
     margin: 0 auto;
-    padding: 20px 0;
+    max-width: 100%;
+    padding: 0 20px;
+}
+.timeline-content {
+    padding: 15px;
 }
 
 .timeline::after {
@@ -1211,4 +1229,125 @@ footer {
     background-color: var(--primary);
     margin-left: 2px;
     animation: blink-caret 0.75s step-end infinite;
+}
+/* Project Grid Improvements */
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    min-width: 0;
+    /* Fixes flexbox overflow issues */
+}
+
+/* Skills Grid Improvements */
+.skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+/* Contact Form Improvements */
+.contact-info {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    :root {
+        --header-padding: 80px;
+        --section-padding: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --header-padding: 70px;
+        --section-padding: 70px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-padding: var(--mobile-header-padding);
+        --section-padding: var(--mobile-section-padding);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --mobile-header-padding: 50px;
+        --mobile-section-padding: 50px;
+    }
+
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .profile-image {
+        max-width: 280px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .certifications-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --mobile-header-padding: 40px;
+        --mobile-section-padding: 40px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }
