@@ -4,7 +4,6 @@ window.addEventListener('load', function () {
         document.querySelector('.loader').classList.add('hidden');
     }, 1000);
 });
-
 // Enhanced Mobile Menu with better accessibility and outside click handling
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
@@ -39,6 +38,11 @@ function setupMobileMenu() {
         }
     });
 }
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  var navMenu = document.getElementById('nav-menu');
+  navMenu.classList.toggle('hidden');
+});
 
 // Enhanced Scroll Animations with throttling
 function setupScrollAnimations() {

@@ -26,6 +26,10 @@
     --mobile-section-padding: 60px;
 }
 
+.hidden{
+    display: none !important;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
