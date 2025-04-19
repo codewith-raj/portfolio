@@ -714,7 +714,6 @@ footer {
     background: var(--primary-light);
 }
 
-/* Background elements */
 .bg-shapes {
     position: absolute;
     top: 0;
@@ -764,7 +763,6 @@ footer {
     filter: blur(20px);
 }
 
-/* Animations */
 [data-animate] {
     opacity: 0;
     transform: translateY(30px);
@@ -776,7 +774,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -877,7 +874,7 @@ footer {
     z-index: 1001;
 }
 
-/* Dark mode toggle */
+
 .theme-toggle {
     background: none;
     border: none;
@@ -893,7 +890,7 @@ footer {
     transform: rotate(30deg);
 }
 
-/* Stats */
+
 .stats-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -929,7 +926,6 @@ footer {
     color: var(--gray);
 }
 
-/* Experience */
 .timeline {
     position: relative;
     margin: 0 auto;
@@ -1006,7 +1002,6 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Loading animation */
 .loader {
     position: fixed;
     top: 0;
@@ -1044,7 +1039,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Particle background */
 #particles-js {
     position: absolute;
     width: 100%;
@@ -1054,7 +1048,6 @@ footer {
     z-index: -1;
 }
 
-/* Cursor for typing animation */
 .cursor {
     display: inline-block;
     width: 2px;
@@ -1064,7 +1057,6 @@ footer {
     animation: blink-caret 0.75s step-end infinite;
 }
 
-/* Responsive Breakpoints */
 @media (max-width: 1200px) {
     :root {
         --header-padding: 80px;

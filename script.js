@@ -1,10 +1,8 @@
-// Loading Screen
 window.addEventListener('load', function () {
     setTimeout(function () {
         document.querySelector('.loader').classList.add('hidden');
     }, 1000);
 });
-// Enhanced Mobile Menu with better accessibility and outside click handling
 function setupMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -17,7 +15,6 @@ function setupMobileMenu() {
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
         
-        // Toggle body scroll
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     }
 
@@ -31,7 +28,7 @@ function setupMobileMenu() {
         });
     });
 
-    // Close menu when clicking outside
+   
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.navbar-container') && navLinks.classList.contains('active')) {
             toggleMenu();
@@ -44,7 +41,7 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
   navMenu.classList.toggle('hidden');
 });
 
-// Enhanced Scroll Animations with throttling
+
 function setupScrollAnimations() {
     const animateElements = document.querySelectorAll('[data-animate]');
     const windowHeight = window.innerHeight;
@@ -60,10 +57,10 @@ function setupScrollAnimations() {
         });
     }
 
-    // Initial check
+  
     checkPosition();
     
-    // Throttled scroll event
+   
     let isScrolling;
     window.addEventListener('scroll', () => {
         window.clearTimeout(isScrolling);
@@ -71,7 +68,7 @@ function setupScrollAnimations() {
     }, { passive: true });
 }
 
-// Back to Top Button
+
 function setupBackToTop() {
     const backToTopButton = document.getElementById('backToTop');
 
@@ -84,7 +81,6 @@ function setupBackToTop() {
     });
 }
 
-// Navbar Scroll Effect
 function setupNavbarScroll() {
     const navbar = document.querySelector('.navbar');
 
@@ -97,7 +93,7 @@ function setupNavbarScroll() {
     });
 }
 
-// Typing Animation
+
 function setupTypingAnimation() {
     const subtitles = [
         "Web Developer • Blockchain Enthusiast • Problem Solver",
@@ -127,7 +123,7 @@ function setupTypingAnimation() {
     setTimeout(startTextAnimation, 1000);
 }
 
-// Smooth Scrolling
+
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -140,7 +136,6 @@ function setupSmoothScrolling() {
     });
 }
 
-// Certifications Slider
 function setupCertificationsSlider() {
     const swiper = new Swiper('.swiper', {
         loop: true,
@@ -184,7 +179,6 @@ function setupCertificationsSlider() {
     });
 }
 
-// Button Animations
 function setupButtonAnimations() {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
@@ -197,7 +191,7 @@ function setupButtonAnimations() {
     });
 }
 
-// Theme Toggle
+
 function setupThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -217,7 +211,6 @@ function setupThemeToggle() {
     applyTheme(currentTheme);
 }
 
-// Counter Animation for Stats
 function setupCounterAnimation() {
     const counters = document.querySelectorAll('.stat-number');
     const speed = 200;
@@ -247,7 +240,6 @@ function setupCounterAnimation() {
     });
 }
 
-// Particles.js Background
 function setupParticles() {
     particlesJS('particles-js', {
         "particles": {
@@ -356,7 +348,7 @@ function setupParticles() {
     });
 }
 
-// Initialize all functions with error handling
+
 document.addEventListener('DOMContentLoaded', () => {
     try {
         setupMobileMenu();
