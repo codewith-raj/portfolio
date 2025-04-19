@@ -8,20 +8,35 @@
     <title>Ritik Raj | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Loading Portfolio...</div>
+    </div>
+
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container navbar-container">
-            <a href="#home" class="logo">Ritik<span>Raj</span></a>
+            <a href="#home" class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <span>Ritik</span>Raj
+            </a>
             <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
             <button class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -30,6 +45,7 @@
     </nav>
 
     <header id="home">
+        <div id="particles-js"></div>
         <div class="bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -55,9 +71,12 @@
                     </a>
                 </div>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn" style="margin-top: 30px;">View My Work</a>
-                    <a href="#contact" class="btn btn-outline" style="margin-top: 30px; margin-left: 15px;">Contact
-                        Me</a>
+                    <a href="#projects" class="btn">
+                        <i class="fas fa-laptop-code"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
                 </div>
             </div>
         </div>
@@ -73,33 +92,84 @@
                     <p>
                         I'm a passionate B.Tech 2nd-year student specializing in Information Technology with expertise
                         in Python, Java (OOP), and Operating Systems. My journey in technology is driven by curiosity
-                        and a
-                        desire to build solutions that make an impact.
+                        and a desire to build solutions that make an impact.
                     </p>
                     <p>
                         Currently, I'm deeply immersed in blockchain technology, developing <strong>Vartul</strong>, a
                         Proof-of-Stake based social media platform that rewards users and creators. My work combines my
                         interests in distributed systems, cryptography, and user-centric design.
                     </p>
-                    <p>
-                        With experience in UNIX/Linux programming, shell scripting, and system calls, I enjoy working
-                        close to the metal while also building modern web applications. As an active hackathon
-                        participant and core member of my college's Operations Team, I've honed my skills in team
-                        coordination, problem-solving, and delivering under pressure.
-                    </p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number" id="projectCount">4+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="certificationCount">8+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="experienceCount">1+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="hackathonCount">3+</div>
+                            <div class="stat-label">Hackathons</div>
+                        </div>
+                    </div>
                     <div style="margin-top: 30px;">
-                        <a href="#contact" class="btn">Get In Touch</a>
-                        <a href="#projects" class="btn btn-outline" style="margin-left: 15px;">View Projects</a>
+                        <a href="#contact" class="btn">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-outline" style="margin-left: 15px;">
+                            <i class="fas fa-laptop-code"></i> View Projects
+                        </a>
                     </div>
                 </div>
                 <div class="about-image">
                     <img src="image/WhatsApp Image 2025-04-12 at 02.04.45_6a65deb8.jpg" alt="Ritik Raj"
-                        class="profile-image" style="width: 150%; height: auto;">
+                        class="profile-image">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="section" data-animate>
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title">INDGenius - Head of operation</h3>
+                        <p>As Head of Operations at INDGenius, I manage events, foster collaboration, and mentor team
+                            members to drive innovation and achieve goals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">LEARNIT - CORE TECH TEAM </h3>
+                        <p>Lead the technical team in organizing events, managing technical setups, and ensuring smooth
+                            execution of hackathons and workshops.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024-2025</div>
+                        <h3 class="timeline-title">GDSC - MEMBER</h3>
+                        <p>Organized workshops, mentored peers, and collaborated on projects at GDSC to enhance skills
+                            and community outreach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section id="projects" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -127,6 +197,9 @@
                             <span class="tech-tag">Machine Learning</span>
                             <span class="tech-tag">TensorFlow</span>
                         </div>
+                        <a href="#" class="btn" style="margin-top: 15px; width: 100%;">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
 
@@ -149,6 +222,9 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">Express</span>
                         </div>
+                        <a href="#" class="btn" style="margin-top: 15px; width: 100%;">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
 
@@ -171,6 +247,9 @@
                             <span class="tech-tag">Google Cloud</span>
                             <span class="tech-tag">React</span>
                         </div>
+                        <a href="#" class="btn" style="margin-top: 15px; width: 100%;">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
 
@@ -193,12 +272,16 @@
                             <span class="tech-tag">Web3.js</span>
                             <span class="tech-tag">Ethereum</span>
                         </div>
+                        <a href="#" class="btn" style="margin-top: 15px; width: 100%;">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -239,6 +322,8 @@
                     <ul class="skill-list">
                         <li class="skill-item"><i class="fab fa-git-alt"></i> Git</li>
                         <li class="skill-item"><i class="fab fa-linux"></i> Linux</li>
+                        <li class="skill-item"><i class="fab fa-docker"></i> Docker</li>
+                        <li class="skill-item"><i class="fab fa-aws"></i> AWS</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -254,14 +339,18 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
     <section id="certifications" class="certifications-section" data-animate>
         <div class="container">
             <div class="section-title">
                 <h2>Certifications & Achievements</h2>
             </div>
             <div class="certifications-container">
+                <!-- Slider main container -->
                 <div class="swiper">
+                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
+                        <!-- Slides -->
                         <div class="swiper-slide">
                             <div class="certification-slide">
                                 <img src="https://icon2.cleanpng.com/20171220/kre/avj1g4azf.webp" alt="Microsoft"
@@ -271,8 +360,22 @@
                                     Fundamentals</h3>
                                 <div class="certification-date">Issued: April 2025</div>
                                 <a href="https://coursera.org/share/f26152243cf715607cfd17ee0fdaf07c"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="certification-slide">
+                                <img src="https://images.icon-icons.com/2699/PNG/512/oracle_logo_icon_168918.png"
+                                    alt="Microsoft" class="certification-logo">
+                                <div class="certification-company">Oracle</div>
+                                <h3 class="certification-title">Oracle - Database programming with SQL</h3>
+                                <div class="certification-date">Issued: NOV 2024</div>
+                                <a href="https://drive.google.com/file/d/1bcck9odYTgPIXkaEI72bj2Z5J6wH2pOM/view?usp=sharing"
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -284,8 +387,9 @@
                                     Design</h3>
                                 <div class="certification-date">Issued: May 2025</div>
                                 <a href="https://coursera.org/share/3244d1932aa3ff7c5e5ed22123d5da1f"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -297,8 +401,9 @@
                                     JavaScript</h3>
                                 <div class="certification-date">Issued: February 2025</div>
                                 <a href="https://coursera.org/share/b419637ab10c57b79628da7eb6d49ecb"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -310,8 +415,9 @@
                                     Technologies</h3>
                                 <div class="certification-date">Issued: October 2024</div>
                                 <a href="https://coursera.org/share/07d56b9a18b644dcc1b4baf1a3bcb93f"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -322,8 +428,9 @@
                                 <h3 class="certification-title">Programming in Modern C++</h3>
                                 <div class="certification-date">Issued: Jul-Oct 2024</div>
                                 <a href="https://drive.google.com/file/d/1dwBVpNxtDygd_eHkUVSU5e_tU0t5P4le/view?usp=sharing"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -334,20 +441,21 @@
                                 <h3 class="certification-title">Red Hat System Administration I & II (RH134)</h3>
                                 <div class="certification-date">Issued: April 2025</div>
                                 <a href="https://drive.google.com/file/d/1eVOoaZ-1CVeIDgfI31iaqu0i32MAots8/view?usp=sharing"
-                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">View
-                                    Credential</a>
+                                    class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="certification-slide">
                                 <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/f1/36da402d6911e8b6fe810dc60d0735/180x180px.png?auto=format%2Ccompress&dpr=1&w=56px&h=56px&auto=format%2Ccompress&dpr=2"
-                                    alt="NPTEL" class="certification-logo">
+                                    alt="Nanyang Technological University" class="certification-logo">
                                 <div class="certification-company">Nanyang Technological University, Singapore</div>
                                 <h3 class="certification-title">Introduction to Forensic Science</h3>
                                 <div class="certification-date">Issued: April 2025</div>
-                                <a href="#" class="btn certification-link" target="_blank"
-                                    rel="noopener noreferrer">View
-                                    Credential</a>
+                                <a href="#" class="btn certification-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> View Credential
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -361,6 +469,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section" data-animate>
         <div class="container">
             <div class="section-title">
@@ -400,8 +509,8 @@
                             <i class="fab fa-twitter"></i>
                         </div>
                         <div class="contact-item-content">
-                            <h4>Twitter </h4>
-                            <p>https://x.com/RitikRaj257376</p>
+                            <h4>Twitter</h4>
+                            <p>@RitikRaj257376</p>
                         </div>
                     </a>
                     <a href="https://drive.google.com/file/d/1c5YNlxhjybXSCiL0qg1cMhpGxSR2fXv3/view?usp=sharing"
@@ -425,27 +534,35 @@
                     </div>
                 </div>
                 <div class="contact-btn-container">
-                    <a href="mailto:ritikrajunique111@gmail.com" class="btn">Email Me</a>
-                    <a href="https://wa.me/9334209411" class="btn btn-outline">WhatsApp</a>
+                    <a href="mailto:ritikrajunique111@gmail.com" class="btn">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/9334209411" class="btn btn-outline">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <img src="image/Ritik raj.png" alt="Coding workspace" class="footer-image">
             <div class="footer-content">
-                <p></p></span> Made with ❤️</p>
+                <p>Made with <span style="color: #ef4444;">❤️</span> and <span style="color: #3b82f6;">code</span></p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 
